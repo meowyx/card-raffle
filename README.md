@@ -7,9 +7,19 @@ A Solana raffle / drop primitive with verifiable Switchboard randomness, SPL tok
 ![Anchor](https://img.shields.io/badge/Anchor-1.0.1-512BD4)
 ![Switchboard](https://img.shields.io/badge/Switchboard-Randomness-00D4AA)
 ![Tests](https://img.shields.io/badge/tests-20%20passing-brightgreen)
+![Devnet](https://img.shields.io/badge/devnet-deployed-success)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 Users buy tickets in a legacy SPL token bound at config time (USDC in the demo), enter drops, and a Switchboard commit-reveal picks a winner. Settle is permissionless and optionally pays an on-chain prize from the protocol treasury.
+
+## Deployed
+
+Live on Solana devnet.
+
+- **Program ID:** `BzoGMtd43CgMjmwVkV1u4hAwA1vbj9Td5gSeJXTDaQTw`
+- **Explorer:** [view on Solana Explorer](https://explorer.solana.com/address/BzoGMtd43CgMjmwVkV1u4hAwA1vbj9Td5gSeJXTDaQTw?cluster=devnet)
+
+The IDL is published on-chain, so any Anchor client can fetch the program interface directly from the program ID with no local artifacts.
 
 ## Features
 
