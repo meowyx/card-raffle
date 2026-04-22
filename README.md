@@ -2,7 +2,7 @@
 
 A Solana raffle / drop primitive with verifiable Switchboard randomness, SPL token ticket purchases, and on-chain prize payout.
 
-![Rust](https://img.shields.io/badge/Rust-1.89-B7410E?logo=rust&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-1.95-B7410E?logo=rust&logoColor=white)
 ![Solana](https://img.shields.io/badge/Solana-3.x-9945FF?logo=solana&logoColor=white)
 ![Anchor](https://img.shields.io/badge/Anchor-1.0.1-512BD4)
 ![Switchboard](https://img.shields.io/badge/Switchboard-Randomness-00D4AA)
@@ -45,7 +45,7 @@ Open ──enter──► Closed ──request_randomness──► RandomnessReq
 
 ## Quick start
 
-Prerequisites: Rust 1.89, the Anchor CLI (1.0+), Solana CLI.
+Prerequisites: Rust 1.95, the Anchor CLI (1.0+), Solana CLI.
 
 ```bash
 anchor build
