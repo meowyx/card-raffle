@@ -1,0 +1,22 @@
+# Rust / Cargo
+target/
+**/*.rs.bk
+Cargo.lock.bak
+
+# Anchor
+.anchor/
+test-ledger/
+
+# Node (legacy from removed TS test setup)
+node_modules/
+.yarn/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Local environment
+.env
+.env.local

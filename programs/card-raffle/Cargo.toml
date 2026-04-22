@@ -1,0 +1,44 @@
+[package]
+name = "card-raffle"
+version = "0.1.0"
+description = "Solana raffle / pack drop primitive (Anchor)"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "card_raffle"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+
+[dependencies]
+anchor-lang = "1.0.1"
+anchor-spl = "1.0.1"
+switchboard-on-demand = { version = "0.12.1", default-features = false, features = ["solana-v3"] }
+# Force-enable `custom` on getrandom 0.2 so it compiles for the Solana BPF target.
+# Pulled in indirectly via solana-program -> k256 -> elliptic-curve -> rand_core.
+# Solana programs never call getrandom at runtime (no on-chain entropy source —
+# that's what Switchboard VRF is for), so the `custom` feature just satisfies
+# the linker with a panic-stub backend.
+getrandom = { version = "0.2", features = ["custom"] }
+
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }
+
+[dev-dependencies]
+litesvm = "0.11.0"
+litesvm-token = "0.11.0"
+solana-sdk = "3"
+bytemuck = "1"
+spl-token = "8"
+spl-associated-token-account = "7"
